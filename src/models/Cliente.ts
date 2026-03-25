@@ -1,29 +1,23 @@
-export default class Cliente {
-    private nome: string;
-    private cpf: string;
-    private telefone: string;
-    private numeroQuarto: number;
-    private dataEntrada: string;
+import Usuario from "./Usuario";
 
-    constructor(
-        nome: string,
-        cpf: string,
-        telefone: string,
-        numeroQuarto: number,
-        dataEntrada: string
-    ) {
-        this.nome = nome;
+export default class Cliente extends Usuario{
+   
+    private cpf: string;
+    
+    constructor(cpf: string) {
+        super();
         this.cpf = cpf;
-        this.telefone = telefone;
-        this.numeroQuarto = numeroQuarto;
-        this.dataEntrada = dataEntrada;
+    }
+   
+    public get getCpf(): string {
+        return this.cpf;
+    }
+    public set setCpf(novoCpf: string) {
+        this.cpf = novoCpf;
     }
 
     public mostrarDados(): void {
-        console.log("Nome: " + this.nome);
+        console.log("Nome: " + super.getNome);
         console.log("CPF: " + this.cpf);
-        console.log("Telefone: " + this.telefone);
-        console.log("Quarto: " + this.numeroQuarto);
-        console.log("Data de entrada: " + this.dataEntrada);
     }
 }

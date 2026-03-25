@@ -5,16 +5,19 @@ console.clear();
 
 const cliente1 = new Cliente(
     "Cleori",
-    "123.456.789-00",
-    "42999999999",
-    101,
-    "23/03/2026"
+    
 );
 
 cliente1.mostrarDados();
 
+console.log("Nome pelo get:", cliente1.getNome);
+
+cliente1.setNome = "Cleonice";
+
+console.log("Depois do set:");
+
 console.log("------------------");
 
-const admin1 = new Administrador("Emerson", "admin01");
+const admin1 = new Administrador("cleo", "admin01");
 admin1.mostrarDados();
 admin1.gerenciarSistema();
