@@ -1,23 +1,15 @@
-import Cliente from "./models/Cliente";
-import Administrador from "./models/Administrador";
+import Admheranca from "./models/Admheranca";
 
-console.clear();
+const adm = new Admheranca("admin123");
 
-const cliente1 = new Cliente(
-    "Cleori",
-    
-);
+adm.setNome = "Carlos";
 
-cliente1.mostrarDados();
+adm.mostrarDados();
 
-console.log("Nome pelo get:", cliente1.getNome);
+console.log(adm.getNome);
+console.log(adm.getLogin);
 
-cliente1.setNome = "Cleonice";
+adm.setLogin = "novoAdmin";
+adm.setNome = "João";
 
-console.log("Depois do set:");
-
-console.log("------------------");
-
-const admin1 = new Administrador("cleo", "admin01");
-admin1.mostrarDados();
-admin1.gerenciarSistema();
+adm.mostrarDados();

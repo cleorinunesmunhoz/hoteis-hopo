@@ -3,7 +3,7 @@ import Usuario from "./Usuario";
 export default class Cliente extends Usuario{
    
     private cpf: string;
-    
+
     constructor(cpf: string) {
         super();
         this.cpf = cpf;
