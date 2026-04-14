@@ -1,20 +1,10 @@
-import Admheranca from "./models/Admheranca";
-//para ligar a tela principal(firtscreen)
-import FirstScreen from "./view/FirstScreen";
+import Banco from "./database/banco";
+import HotelController from "./controller/hotelController";
+import FirstScreen from "./view/firstScreen";
 
-const adm = new Admheranca("admin123");
+const banco = new Banco();
+const controller = new HotelController(banco);
 
-adm.setNome = "Carlos";
+const tela = new FirstScreen(controller);
 
-adm.mostrarDados();
-
-console.log(adm.getNome);
-console.log(adm.getLogin);
-
-adm.setLogin = "novoAdmin";
-adm.setNome = "João";
-
-adm.mostrarDados();
-
-
-new FirstScreen();
+tela.iniciar();

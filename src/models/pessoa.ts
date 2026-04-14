@@ -1,5 +1,10 @@
-export default class Administrador {
-    private nome!: string;
+export default class Pessoa {
+
+    private nome: string;
+
+    constructor(nome: string) {
+        this.nome = nome;
+    }
 
     public get getNome(): string {
         return this.nome;
