@@ -18,6 +18,6 @@ export default class Cliente extends Pessoa {
     }
 
     public mostrarDados(): void {
-        console.log(`Nome: ${this.getNome}\nCPF: ${this.getCpf}`);
+        console.log("Nome: " + this.getNome + "\nCPF: " + this.getCpf);
     }
 }

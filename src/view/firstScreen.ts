@@ -79,11 +79,29 @@ export default class FirstScreen {
     private cadastrarQuarto(): void {
 
         const numero = Number(readlineSync.question("Numero do quarto: "));
-        const tipoInput = readlineSync.question("Tipo (SOLTEIRO, CASAL, LUXO): ");
 
-        const tipo = TipoQuarto[tipoInput as keyof typeof TipoQuarto];
+        console.log("Tipo do quarto:");
+        console.log("1 - Solteiro");
+        console.log("2 - Casal");
+        console.log("3 - Luxo");
 
-        const quarto = new Quarto(numero, tipo);
+        const tipoOpcao = Number(readlineSync.question("Escolha: "));
+        const dias = Number(readlineSync.question("Dias: "));
+
+        let tipo: TipoQuarto;
+
+        if (tipoOpcao === 1) {
+            tipo = TipoQuarto.SOLTEIRO;
+        } else if (tipoOpcao === 2) {
+            tipo = TipoQuarto.CASAL;
+        } else if (tipoOpcao === 3) {
+            tipo = TipoQuarto.LUXO;
+        } else {
+            console.log("Tipo inválido!");
+            return;
+        }
+
+        const quarto = new Quarto(numero, tipo, dias);
         this.controller.cadastrarQuarto(quarto);
 
         console.log("Quarto cadastrado!");
